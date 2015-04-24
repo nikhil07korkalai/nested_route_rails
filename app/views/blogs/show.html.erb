@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @blog.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @blog.body %>
+</p>
+
+
+<h1>Listing Comments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Comment text</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @blog.comments.each do |comment| %>
+      <tr>
+        <td><%= comment.comment_text %></td>
+        <td><%= link_to 'Show', [comment.blog, comment] %></td>
+        <td><%= link_to 'Edit', edit_blog_comment_path(comment.blog, comment)%></td>
+        <td><%= link_to 'Destroy', [comment.blog, comment], :confirm => 'Are you sure?', :method => :delete %>/td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New Comment', new_blog_comment_path(@blog) %>
+<%= link_to 'Edit', edit_blog_path(@blog) %> |
+<%= link_to 'Back', blogs_path %>
