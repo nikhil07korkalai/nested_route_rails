@@ -16,7 +16,7 @@
         <td><%= comment.comment_text %></td>
         <td><%= link_to 'Show', [comment.blog, comment] %></td>
         <td><%= link_to 'Edit', edit_blog_comment_path(comment.blog, comment)%></td>
-        <td><%= link_to 'Destroy', [comment.blog, comment], :confirm => 'Are you sure?', :method => :delete %>/td>
+        <td><%= link_to 'Destroy', [comment.blog, comment], :confirm => 'Are you sure?', :method => :delete %></td>
       </tr>
     <% end %>
   </tbody>
